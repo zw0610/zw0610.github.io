@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+## (WIP)欢迎我的个人主页
 
-You can use the [editor on GitHub](https://github.com/zw0610/zw0610.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+嗨，我叫张望，是一个半路出家的机器学习工程师。
+从计算流体出身的我，在第一次接触 CUDA 之后就不可救药地投入到了 GPU 通用计算之中。
+经过好几年的探索，渐渐发现对与 GPU 的使用，机器学习无论是否相较科学计算领域，都是始终位于 GPU 使用的第一线。
+因此，我也决定投入到机器学习工程化的队伍中。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+`Hey, it's Wang. I'm a ML engineer who jumped into ML world halfway.`
+`While previously working on fluid computation, I get obsessed with GPGPU once I made my first CUDA program (an SOR solver in CUDA).`
+`After years of trial and error, it is believed that in terms of the GPU application, whether compared to scientific computation or not, it is machine learning that always push the limit of GPU.`
+`Thus, I decided to devote myself to the machine learning engineering.`
 
-### Markdown
+### 简历
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[中文简历](TBD)
+[Resume](TBD)
 
-```markdown
-Syntax highlighted code block
+### 技术博客
 
-# Header 1
-## Header 2
-### Header 3
+[重峦叠重般的 GPU 利用率](TBD)
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zw0610/zw0610.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### 非技术博客
