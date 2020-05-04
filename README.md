@@ -5,17 +5,17 @@
 经过好几年的探索，渐渐发现对与 GPU 的使用，机器学习无论是否相较科学计算领域，都是始终位于 GPU 使用的第一线。
 因此，我也决定投入到机器学习工程化的队伍中。
 
-*Hey, it's Wang. I'm a ML engineer who jumped into ML world halfway.*
-*While previously working on fluid computation, I get obsessed with GPGPU once I made my first CUDA program (an SOR solver in CUDA).*
-*After years of trial and error, it is believed that in terms of the GPU application, whether compared to scientific computation or not, it is machine learning that always push the limit of GPU.*
+*Hey, it's Wang. I'm a ML engineer who jumped into the ML world halfway.*
+*While previously working on fluid computation, I get obsessed with GPGPU once I made my first CUDA program (an SOR solver).*
+*After years of trial and error, I realized that in terms of the GPU application, whether compared to scientific computation or not, it is machine learning that always pushes the limit of GPU.*
 *Thus, I decided to devote myself to the machine learning engineering.*
 
 ### 简历
 
-[中文简历](TBD)    [Resume](TBD)
+[中文简历](TBD)  [Resume](TBD)
 
 ### 技术博客
 
-[重峦叠重般的 GPU 利用率](TBD)
+[重峦叠重般的 GPU 利用率](./notes-cn/gpu-utilization-in-mist.md)
 
 ### 非技术博客
