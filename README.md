@@ -17,6 +17,7 @@
 ### 技术博客
 
 [重峦叠重般的 GPU 利用率](./notes-cn/gpu-utilization-in-mist.md)
+
 [也说弹性分布式训练](./notes-cn/all-elasticity.md)
 
 ### 非技术博客
