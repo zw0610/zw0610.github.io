@@ -12,7 +12,7 @@
 
 ### 简历
 
-[中文简历](./resume/cn.rtf)  [Resume](TBD)
+[中文简历](./resume/jianli.rtf)  [Resume](./resume/resume.pdf)
 
 ### 技术博客
 
