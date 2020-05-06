@@ -20,4 +20,6 @@
 
 [也说弹性分布式训练](./notes-cn/all-elasticity.md)
 
+[GPU 共享一：你真的需要吗？](./notes-cn/gpu-sharing-1.md)
+
 ### 非技术博客
