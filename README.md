@@ -22,4 +22,6 @@
 
 [GPU 共享一：你真的需要吗？](./notes-cn/gpu-sharing-1.md)
 
+[GPU 共享二：调度](./notes-cn/gpu-sharing-2.md)
+
 ### 非技术博客
