@@ -24,4 +24,6 @@
 
 [GPU 共享二：调度](./notes-cn/gpu-sharing-2.md)
 
+[GPU 共享三：井水不犯河水](./notes-cn/gpu-sharing-3.md)
+
 ### 非技术博客
