@@ -101,15 +101,41 @@ v_hat_t = v_t / (1 - 𝜷_2^t)
 
 `𝜺` 是一个用以保证数值稳定的一个很小的值。
 
-### Adagrad
+### AdaGrad
 
 其实 [AdaGrad](https://web.archive.org/web/20150330033637/http://seed.ucsd.edu/mediawiki/images/6/6a/Adagrad.pdf) 相比 RMSProp 可能更早，可以看作是一个未做阻尼的 RMSProp 版本。它更新参数的方式于 RMSProp 非常相似：
 
 ```
-𝜽_w,t = 𝜽_w,t-1 - 𝜂*J_w'(𝜽)/G_w,w
+𝜽_w,t = 𝜽_w,t-1 - 𝜂*J_w'(𝜽)/sqrt(G_w,w)
 ```
 
 那这里的 `G_w,w` 是怎么计算出来的呢？`G_w,w = Sum[J_w_t'(𝜽)^2, {𝝉, 1, t}]`，这里 `𝝉` 指的是迭代的次数，换句话讲，就是记录下了该参数的历史梯度平方和。
 
-## Adadelta
+### Adadelta
 
+AdaDelta 的文章，[ADADELTA: AN ADAPTIVE LEARNING RATE METHOD](https://arxiv.org/pdf/1212.5701.pdf)，相当有意思。
+
+文章先介绍了一种 idea：Accumulate Over Window。
+
+文章后面还提到了第二种想法，利用二阶导数 Hessian 矩阵进行梯度下降的纠正。这里就暂时不展开了。关于利用 Hessian 矩阵的优化，我们有空在另一篇文章中来看。
+
+Accumulate Over Window 这种方法似乎是介于 AdaGrad 和 Adam 之间的一种方法。AdaGrad 中直接累加过去所有的梯度平方。但是显然，越久之前的梯度平方越难以反映临近当前的梯度状况。因此我们需要对梯度平方做一个加权：
+
+```
+E_t[g^2] = 𝝆E_t-1[g^2] + (1-𝝆)g_t^2
+```
+
+同样的，对梯度下降的速度也做一个估计，用来当作学习率：
+
+```
+E_t[𝜟x^2] = 𝝆E_t-1[𝜟x^2] + (1-𝝆)𝜟x_t^2^2
+```
+
+然后同时用这两项来更新梯度：
+
+```
+x_t+1 = x_t - sqrt(E_t-1[𝜟x^2])/sqrt(E_t[g^2])*J'(𝜽)
+```
+
+
+*P.S. 等我掌握如何用 gist 渲染数学公式之后，我会把这里的表达式再更新一篇*
