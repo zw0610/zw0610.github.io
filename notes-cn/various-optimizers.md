@@ -70,9 +70,40 @@ v(w, t+1) = 𝛾v(w, t) + (1-𝛾)(J'(𝜽))^2
 𝜽_w,t+1 = 𝜽_w,t - 𝜂*J'(𝜽)/sqrt(v(w, t+1))
 ```
 
-### Adagrad
+### Adam
 
-## Adam
+Adaptive Moment Estimation（Adam）优化器针对 RMSProp 做了进一步的优化，这里参考了出处[ADAM: A METHOD FOR STOCHASTIC OPTIMIZATION](https://arxiv.org/pdf/1412.6980.pdf)。 
+
+和 RMSProp 相比，Adam 主要的不同指出在于对于更新梯度时，对于梯度 `J'(𝜽)` 加入了阻尼：
+
+```
+m_t = 𝜷_1*m_t-1 + (1 - 𝜷_1)*J'(𝜽)
+```
+
+然后依然像 RMSProp 那样利用梯度方差：
+
+```
+v_t = 𝜷_2*v_t-1 + (1 - 𝜷_2)*J'(𝜽)^2
+```
+
+当然，这里也对期望和方差都做了修正 `1/(1 - 𝜷_1^t)` 以及 `1/(1 - 𝜷_2^t)`。
+
+```
+m_hat_t = m_t / (1 - 𝜷_1^t)
+v_hat_t = v_t / (1 - 𝜷_2^t)
+```
+
+最后，继续依旧常规更新梯度。
+
+```
+𝜽_w,t = 𝜽_w,t-1 - 𝜂*m_hat_t/(sqrt(v_hat_t) + 𝜺)
+```
+
+`𝜺` 是一个用以保证数值稳定的一个很小的值。
+
+
+
+### Adagrad
 
 ## Adadelta
 
