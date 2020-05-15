@@ -33,7 +33,9 @@ MIG 从硬件的层面不仅对 SM（Stream-Multiprocessor，流处理器）进�
 ## 尚未可知的内容
 
 [ ] MIG 是否为 A100 独有，30X0 卡会不会具备 MIG 功能？
+
 [ ] 容器如何选择挂在不同的 GPU instance？
+
 [ ] Blog 中提到的 "a new resource type in Kubernetes" 到底是什么？在 Nvidia device plugin 的 repo 中暂时还没找到相关代码。
 
 有兴趣一起探讨的可以通过我的 email：[mailto](mailto:zw199006@gmail.com)
