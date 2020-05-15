@@ -26,6 +26,8 @@
 
 [GPU 共享三：井水不犯河水](./notes-cn/gpu-sharing-3.md)
 
+[GPU 共享四：MIG 带来的补充](./notes-cn/gpu-sharing-4.md)
+
 [各种 Optimizer 汇总](./notes-cn/various-optimizers.md)
 
 ### 非技术博客
