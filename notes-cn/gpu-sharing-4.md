@@ -10,7 +10,7 @@
 
 1. GRID 方案可以做到完全资源（算力和显存）隔离，但是必须依托虚拟机，无法在容器上直接挂在分割后的 sub-GPU。
 
-2. MPS 方案可以对接容器（Volta 之后的卡），对算力也能做限制，且无需担心 context switch 带来的 overhead，因为 MPS daemon 将各位 clients 发来的 context 通过 daemon 自身的 context 透传到 GPU。但是受限于硬件，对于显存、IO 带宽，MPS 方案无法做到限制，往往需要额外的组件来处理显存相关的操作。除此之外，之前提到的 MPS context 是的错误无法被隔离。这样一来，一个 client 发生了错误，或者说 daemon context 发生了错误，会影响到其他的 client CUDA 程序的运行。
+2. MPS 方案可以对接容器（Volta 之后的卡），对算力也能做限制，且无需担心 context switch 带来的 overhead，因为 MPS daemon 将各位 clients 发来的 context 通过 daemon 自身的 context 透传到 GPU。但是受限于硬件，对于显存、IO 带宽，MPS 方案无法做到限制，往往需要额外的组件来处理显存相关的操作。除此之外，之前提到的 MPS context 的错误无法被隔离。这样一来，一个 client 发生了错误，或者说 daemon context 发生了错误，会影响到其他的 client CUDA 程序的运行。
 
 那么 Ampere 带来的 A100 所具备的 Multi-Instance 呢？[Reference](https://devblogs.nvidia.com/nvidia-ampere-architecture-in-depth/)
 
@@ -32,11 +32,11 @@ MIG 从硬件的层面不仅对 SM（Stream-Multiprocessor，流处理器）进�
 
 ## 尚未可知的内容
 
-[ ] MIG 是否为 A100 独有，30X0 卡会不会具备 MIG 功能？
+- [] MIG 是否为 A100 独有，30X0 卡会不会具备 MIG 功能？
 
-[ ] 容器如何选择挂在不同的 GPU instance？
+- [] 容器如何选择挂在不同的 GPU instance？
 
-[ ] Blog 中提到的 "a new resource type in Kubernetes" 到底是什么？在 Nvidia device plugin 的 repo 中暂时还没找到相关代码。
+- [] Blog 中提到的 "a new resource type in Kubernetes" 到底是什么？在 Nvidia device plugin 的 repo 中暂时还没找到相关代码。
 
 有兴趣一起探讨的可以通过我的 email：[mailto](mailto:zw199006@gmail.com)
 

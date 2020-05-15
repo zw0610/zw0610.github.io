@@ -37,7 +37,8 @@
 [nvmlUtilization_t](https://docs.nvidia.com/deploy/nvml-api/structnvmlUtilization__t.html#structnvmlUtilization__t)
 
 > `unsigned int nvmlUtilization_t::gpu [inherited]`
-> **Percent of time over the past sample period during which one or more kernels was executing on the GPU.**
+
+**Percent of time over the past sample period during which one or more kernels was executing on the GPU.**
 
 啊，原来 Nvidia 统计一块 GPU 使用率的时候，采取了跟我们一开始类似的统计方式。NVML 并没有统计 GPU 的有多少流处理器（SM）被使用，而是采取时间切片的方式，计算了在过去的 K 个时间切片中，有百分之几的时间切片里，GPU 有至少一个 kernel 函数正在被运行。
 
@@ -51,7 +52,7 @@
 
 第一个方法比较 hacky，实话说也尚无实验做确凿的验证。但也不妨一试。
 
-我们可以想象，想要驱动更多的流处理器，就需要更多的电流。而平时玩游戏的时候我们也能发现，渲染桌面的时候，GPU 耗电低；渲染游戏画面的时候，GPU 耗电高。这样一来，我们不妨通过 GPU 功率来衡量流处理器的使用率，当然是否线性，是否过原点（应该不过）我们尚且需要验证。
+我们可以想象，想要驱动更多的流处理器，就需要更多的电力。而平时玩游戏的时候我们也能发现，渲染桌面的时候，GPU 耗电低；渲染游戏画面的时候，GPU 耗电高。这样一来，我们不妨通过 GPU 功率来衡量流处理器的使用率，当然是否线性，是否过原点（应该不过）我们尚且需要验证。
 
 按照这种想法 `u(t) = p(t)`，`p(t)` 即为 `t` 时刻 GPU 的功率占最大功率的百分比。需要注意的是，如果 `p(t)` 是针对一个（混部）集群上的所有 GPU 进行描述的话，需要先做百分比，再做平均。
 

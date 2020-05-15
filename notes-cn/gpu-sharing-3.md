@@ -23,9 +23,9 @@
 
 在腾讯的 [GaiaGPU](https://ieeexplore.ieee.org/abstract/document/8672318) 这篇文章中，号称可以做到限制。其中心思想，在我看来是一种朴素的控制理论：负反馈调节。
 
-每次发起 CUDA kernel 的时候，都需要检查一下当前任务对 GPU 的使用率，并对本次 CUDA kernel 会增加的 GPU 使用率作出估计。如果预计本次 CUDA kernel 会使得 GPU 使用率超标，则延缓 kernel 的运行，直到当前的 GPU 使用率下降至允许本次 CUDA kernel 的运行之后。
+每次发起 CUDA kernel 的时候，都需要检查一下当前任务对 GPU 的使用率，并对本次 CUDA kernel 会增加的 GPU 使用率作出估计。如果预计本次 CUDA kernel 会使得 GPU 使用率超标，则延缓 kernel 的运行，直到当前的 GPU 使用率下降至允许本次 CUDA kernel 的运行之后。然后这样做，无法避免多个任务的 context 切换带来的 overhead。
 
-劫持的工程实现是坐在 vcuda-controller 上的。
+劫持的工程实现是做在 vcuda-controller 上的。
 
 ## 逆向工程
 
