@@ -28,7 +28,7 @@ This problem is not unique to deep learning. Image processing shares this proble
 
 The most enlightening idea that Halide offers is that we can *[separate the algorithm, what you want to compute, and the schedule, how you want to compute](https://halide-lang.org/papers/halide_autoscheduler_2019.pdf)*. In its implementation, the Halide language defines a set of IR, intermediate representation, to describe the filters for images and use a multi-target compiler to translate the set of IRs to the optimized machine code on specific devices via low-level APIs including CUDA, OpenCL, Apple Metal, DirectX and so on.
 
-![halide_scheulde](./notes-en/oneapi/halide-schedule.jpeg)
+![halide_scheulde](./oneapi/halide-schedule.jpeg)
 
 This idea inspires [TVM](https://tvm.apache.org/) to come up with its own IR standard for machine learning. The origin purpose of TVM, if my recall is correct, is to use its ML IRs to represent dl models described in different frameworks and use its compiler to optimize executions on many devices. While the TVM seems no very successful (forgive me if I'm wrong) in the community and industry, I can't agree with its idea and goal more. (And the I think one of the reason is this topic is unfairly favors the device manufactories. TVM does not produce any AI chips. Its opt algorithm may easily be outperformed by tiny effort from Intel/NVIDIA.)
 
