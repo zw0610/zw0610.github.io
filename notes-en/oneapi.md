@@ -46,19 +46,25 @@ The blog and presentation of TFRT impressed me with its idea to acts as the hub 
 
 Even without reading the source code of TensorFlow, from the experience of adding new ops in TF, this framework links the op and its device-specific implementation (in C++). When deploying on mobile devices, TFLite is additionally required. However, it seems TFRT can take the model directly and use it mobile-targeting part to accelerate the inference.
 
-From the source code of [TFRT](https://github.com/tensorflow/runtime), this new layer in TensorFlow is born out of [MLIR](https://www.tensorflow.org/mlir), which *defines a common intermediate representation (IR) that unifies the infrastructure required to execute high performance machine learning models in TensorFlow and similar ML frameworks*. I bet, when releasing MLIR, TensorFlow wishes other *similar ML frameworks*, like mxnet or PyTorch, can come to the arena of TensorFlow, using MLIR as the universal layer. This idea is finally adopted by Intel.
+From the source code of [TFRT](https://github.com/tensorflow/runtime), this new layer in TensorFlow is born out of [MLIR](https://www.tensorflow.org/mlir), which *defines a common intermediate representation (IR) that unifies the infrastructure required to execute high performance machine learning models in TensorFlow and similar ML frameworks*. I bet, when releasing MLIR, TensorFlow wishes other *similar ML frameworks*, like mxnet or PyTorch, can come to the arena of TensorFlow, using MLIR as the universal layer. This idea is *partially* adopted by Intel.
 
 ### oneAPI
 
-I do hope that oneAPI is not just re-branded mkl-dnn, mkl, mlsl and many other tools previously developed by Intel.
+I do hope that [oneAPI](https://software.intel.com/content/www/us/en/develop/download/oneapi-product-brief.html) is not just re-branded mkl-dnn, mkl, mlsl and many other tools previously developed by Intel.
 
 ![oneapi](./oneapi/oneapi.png)
 
-If we mask the diagram above the deep learning:
+If we mask the graph above the deep learning:
 
 - the *optimized application* means *optimized* refers training programs and inference applications
-- *optimized middleware&framework* refers 
+- *optimized middleware&framework* refers dl frameworks like Caffe, TensorFlow, PyTorch optimized by Intel or here we say oneAPI group
+- *oneAPI Libraries* include oneMKL which accelerate basic math operations, oneDNN which has its optimized implementation for different targets, oneCLL which you can think as a library similar to Gloo and NCCL
+- The devices in the graph refers CPUs, GPUs, and AI chips (all of which I hope also from vendors besides Intel)
 
+So far, there are two disappointments in oneAPI:
+
+1. the whole set of toolkit are still Intel-exclusive. While [ComputeCpp](https://www.codeplay.com/products/computesuite/computecpp) from [Codeplay](codeplay.com) does bring DPC++ to oneAPI via NVIDIA's OpenCL API, such support has not infiltrated into ondDNN, the critical library dl frameworks are expected to use
+2. the concept of IR seems not adopted after reviewing the source code of [oneDNN](https://github.com/oneapi-src/oneDNN). Although without (ML) IR, oneAPI can still optimize implementation for ml ops, some effort may look cumbersome since one operation, even deployed on different devices, may still share some characteristic on scheduling.
 
 ## ROCm from AMD
 
