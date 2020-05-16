@@ -30,4 +30,6 @@
 
 [各种 Optimizer 汇总](./notes-cn/various-optimizers.md)
 
+[EN: Hurry! oneAPI](./notes-en/oneapi.md)
+
 ### 非技术博客
