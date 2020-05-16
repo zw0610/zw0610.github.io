@@ -34,6 +34,24 @@ This idea inspires [TVM](https://tvm.apache.org/) to come up with its own IR sta
 
 ## TFRT & openAPI
 
+It seems this idea is wide-spread among both TensorFlow community and Intel.
+
+### TensorFlow Runtime
+
+After the setback of TensorFlow 2.0, I'm not sure if [TensorFlow Runtime (TFRT)](https://blog.tensorflow.org/2020/04/tfrt-new-tensorflow-runtime.html) counts as it latest effort to maintain its dominant position in dl stack. (While we see the decline and climb of TensorFlow and PyTorch in research usage, it looks the comprehensiveness of TensorFlow, consisting of TFX, TFLite and TFServing keeps the inertia of TensorFlow in industry.)
+
+The blog and presentation of TFRT impressed me with its idea to acts as the hub for ops and targeting CPU, GPU, TPU and mobile devices.
+
+![tfrt](https://1.bp.blogspot.com/-0m9v6oLvo70/XqhqxI8rAfI/AAAAAAAADDE/tvUuamxh7L4A2DTaG4LD99Eka3tEQBzxACLcBGAsYHQ/s1600/tfrtroleingraph.png)
+
+Even without reading the source code of TensorFlow, from the experience of adding new ops in TF, this framework links the op and its device-specific implementation (in C++). When deploying on mobile devices, TFLite is additionally required. However, it seems TFRT can take the model directly and use it mobile-targeting part to accelerate the inference.
+
+From the source code of [TFRT](https://github.com/tensorflow/runtime), this new layer in TensorFlow is born out of [MLIR](https://www.tensorflow.org/mlir), which *defines a common intermediate representation (IR) that unifies the infrastructure required to execute high performance machine learning models in TensorFlow and similar ML frameworks*. I bet, when releasing MLIR, TensorFlow wishes other *similar ML frameworks*, like mxnet or PyTorch, can come to the arena of TensorFlow, using MLIR as the universal layer. This idea is finally adopted by Intel.
+
+### oneAPI
+
+I do hope that oneAPI is not just re-branded mkl-dnn, mkl, mlsl.
+
 ## ROCm from AMD
 
 ## A better future
