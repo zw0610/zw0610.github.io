@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-265 -1 801 393" width="801" height="393">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="14" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.11.2 
+    <dc:date>2020-05-16 12:02:43 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" fill="none" stroke-dasharray="none" fill-opacity="1" stroke="none" stroke-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <path d="M 0 8 L 8 0 L 142 0 L 150 8 L 150 62 L 142 70 L 8 70 L 0 62 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(8.75 26.804)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="30.613" y="13">TensorFlow</tspan>
+        </text>
+      </g>
+      <g id="Graphic_3">
+        <path d="M 160 8 L 168 0 L 302 0 L 310 8 L 310 62 L 302 70 L 168 70 L 160 62 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(168.75 26.804)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="41.099" y="13">PyTorch</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <path d="M 334 8 L 342 0 L 476 0 L 484 8 L 484 62 L 476 70 L 342 70 L 334 62 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(342.75 26.804)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="49.639" y="13">Caffe</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <text transform="translate(315 22)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="0" y="13">…</tspan>
+        </text>
+      </g>
+      <g id="Graphic_6">
+        <text transform="translate(-145 13.608002)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="19.874" y="13">Framework</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="12.734" y="29.392">(As FrontEnd)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8">
+        <path d="M 29.925 300 L 55.575 300 C 64.125 300 68.4 300 73.53 301.82 C 77.805 303.64 82.08 308.19 83.79 312.74 C 85.5 318.2 85.5 322.75 85.5 331.85 L 85.5 359.15 C 85.5 368.25 85.5 372.8 83.79 378.26 C 82.08 382.81 77.805 387.36 73.53 389.18 C 68.4 391 64.125 391 55.575 391 L 29.925 391 C 21.375 391 17.1 391 11.97 389.18 C 7.695 387.36 3.42 382.81 1.71 378.26 C 0 372.8 0 368.25 0 359.15 L 0 331.85 C 0 322.75 0 318.2 1.71 312.74 C 3.42 308.19 7.695 303.64 11.97 301.82 C 17.1 300 21.375 300 29.925 300 M 29.925 300" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(5 312.912)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="18.178" y="13">CUDA</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="15.329" y="45.392">NVIDIA </tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="22.847" y="61.784">GPU</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <path d="M 264 170 L 264 107 L 286 100 L 484 100 L 484 163 L 462 170 L 264 170 M 264 107 L 462 107 L 484 100 M 462 107 L 462 170" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(269 130.304)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="75.457" y="13">ML IR</tspan>
+        </text>
+      </g>
+      <g id="Graphic_12">
+        <path d="M 0 170 L 0 107 L 22 100 L 220 100 L 220 163 L 198 170 L 0 170 M 0 107 L 198 107 L 220 100 M 198 107 L 198 170" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(5 130.304)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="64.705" y="13">Tensor IR</tspan>
+        </text>
+      </g>
+      <g id="Graphic_13">
+        <text transform="translate(-145 126.804)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="29.205" y="13">IR Layer</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <path d="M 139.925 300 L 165.575 300 C 174.125 300 178.4 300 183.53 301.82 C 187.805 303.64 192.08 308.19 193.79 312.74 C 195.5 318.2 195.5 322.75 195.5 331.85 L 195.5 359.15 C 195.5 368.25 195.5 372.8 193.79 378.26 C 192.08 382.81 187.805 387.36 183.53 389.18 C 178.4 391 174.125 391 165.575 391 L 139.925 391 C 131.375 391 127.1 391 121.97 389.18 C 117.695 387.36 113.42 382.81 111.71 378.26 C 110 372.8 110 368.25 110 359.15 L 110 331.85 C 110 322.75 110 318.2 111.71 312.74 C 113.42 308.19 117.695 303.64 121.97 301.82 C 127.1 300 131.375 300 139.925 300 M 139.925 300" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(115 312.912)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="11.682" y="13">OpenCL</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="22.189" y="45.392">AMD</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="22.847" y="61.784">GPU</tspan>
+        </text>
+      </g>
+      <g id="Graphic_15">
+        <path d="M 249.925 300 L 275.575 300 C 284.125 300 288.4 300 293.53 301.82 C 297.805 303.64 302.08 308.19 303.79 312.74 C 305.5 318.2 305.5 322.75 305.5 331.85 L 305.5 359.15 C 305.5 368.25 305.5 372.8 303.79 378.26 C 302.08 382.81 297.805 387.36 293.53 389.18 C 288.4 391 284.125 391 275.575 391 L 249.925 391 C 241.375 391 237.1 391 231.97 389.18 C 227.695 387.36 223.42 382.81 221.71 378.26 C 220 372.8 220 368.25 220 359.15 L 220 331.85 C 220 322.75 220 318.2 221.71 312.74 C 223.42 308.19 227.695 303.64 231.97 301.82 C 237.1 300 241.375 300 249.925 300 M 249.925 300" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(225 304.716)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="20.376" y="13">Metal</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="12.991" y="45.392">GPU on </tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="19.599" y="61.784">Apple </tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="16.491" y="78.175995">Device</tspan>
+        </text>
+      </g>
+      <g id="Graphic_16">
+        <text transform="translate(345 337.304)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="0" y="13">…</tspan>
+        </text>
+      </g>
+      <g id="Graphic_17">
+        <path d="M 428.425 300 L 454.075 300 C 462.625 300 466.9 300 472.03 301.82 C 476.305 303.64 480.58 308.19 482.29 312.74 C 484 318.2 484 322.75 484 331.85 L 484 359.15 C 484 368.25 484 372.8 482.29 378.26 C 480.58 382.81 476.305 387.36 472.03 389.18 C 466.9 391 462.625 391 454.075 391 L 428.425 391 C 419.875 391 415.6 391 410.47 389.18 C 406.195 387.36 401.92 382.81 400.21 378.26 C 398.5 372.8 398.5 368.25 398.5 359.15 L 398.5 331.85 C 398.5 322.75 398.5 318.2 400.21 312.74 C 401.92 308.19 406.195 303.64 410.47 301.82 C 415.6 300 419.875 300 428.425 300 M 428.425 300" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(403.5 312.912)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="20.376" y="13">Metal</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="3.506" y="45.392">Qualcomm</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="1.98" y="61.784">Accelerator</tspan>
+        </text>
+      </g>
+      <g id="Graphic_18">
+        <rect x="0" y="192.5" width="484" height="70" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(5 219.304)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="43.821" y="13">Compiler: Optimize and Schedule Kernel Execution on Device</tspan>
+        </text>
+      </g>
+      <g id="Graphic_19">
+        <text transform="translate(-145 219.304)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="10.536" y="13">Process Layer</tspan>
+        </text>
+      </g>
+      <g id="Graphic_20">
+        <text transform="translate(-145 337.304)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="30.241" y="13">Devices</tspan>
+        </text>
+      </g>
+      <g id="Graphic_21">
+        <path d="M -34 90.25 L 534.5 90.25 L 534.5 279.75 L -34 279.75 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8.0,8.0" stroke-width="2"/>
+      </g>
+      <g id="Graphic_22">
+        <text transform="translate(-260 164.858)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="16.91" y="13">Universal Layer</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" font-weight="400" fill="black" x="6.921" y="29.392">For Deep Learning</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

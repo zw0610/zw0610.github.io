@@ -32,7 +32,7 @@ The most enlightening idea that Halide offers is that we can *[separate the algo
 
 ![halide_scheulde](./oneapi/halide-schedule.jpeg)
 
-This idea inspires [TVM](https://tvm.apache.org/) to come up with its own IR standard for machine learning. The origin purpose of TVM, if my recall is correct, is to use its ML IRs to represent dl models described in different frameworks and use its compiler to optimize executions on many devices. While the TVM seems no very successful (forgive me if I'm wrong) in the community and industry, I can't agree with its idea and goal more. (And the I think one of the reason is this topic is unfairly favors the device manufactories. TVM does not produce any AI chips. Its opt algorithm may easily be outperformed by tiny effort from Intel/NVIDIA.)
+This idea inspires [TVM](https://tvm.apache.org/) to come up with its own IR standard for machine learning. The origin purpose of TVM, if my recall is correct, is to use its ML IRs to represent dl models described in different frameworks and use its compiler to optimize executions on many devices. While the TVM seems no very successful (forgive me if I'm wrong) in the community and industry, I can't agree with its idea and goal more. (And the I think one of the reason is this topic is unfairly favors the device manufactories. TVM does not produce any AI chips. Its opt algorithm would easily be outperformed by tiny effort from Intel/NVIDIA.)
 
 ## TFRT & openAPI
 
@@ -66,11 +66,11 @@ If we mask the graph above the deep learning:
 So far, there are two disappointments in oneAPI:
 
 1. the whole set of toolkit are still Intel-exclusive. While [ComputeCpp](https://www.codeplay.com/products/computesuite/computecpp) from [Codeplay](codeplay.com) does bring DPC++ to oneAPI via NVIDIA's OpenCL API, such support has not infiltrated into ondDNN, the critical library dl frameworks are expected to use
-2. the concept of IR seems not adopted after reviewing the source code of [oneDNN](https://github.com/oneapi-src/oneDNN). Although without (ML) IR, oneAPI can still optimize implementation for ml ops, some effort may look cumbersome since one operation, even deployed on different devices, may still share some characteristic on scheduling.
+2. the concept of IR seems not adopted after reviewing the source code of [oneDNN](https://github.com/oneapi-src/oneDNN). Although without (ML) IR, oneAPI can still optimize implementation for ml ops, some effort looks cumbersome since one operation, even deployed on different devices, still share some characteristic on scheduling.
 
 ## ROCm from AMD
 
-Lacking the support for AMD CPU and GPU seems most disappointing part in oneAPI. It may seems naive, but I still hope the community work can break the fence of interest and help each others.
+Lacking the support for AMD CPU and GPU seems most disappointing part in oneAPI. It may seem naive, but I still hope the community work can break the fence of interest and help each others.
 
 At this moment, AMD offers its own stack for deep learning, which is called [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm).
 
@@ -80,8 +80,16 @@ likewise, the full stack is now able to provide end-to-end acceleration for deep
 
 > Interesting story, in the early stage of AMD-modified DL frameworks, AMD re-implemented most all CUDA runtime APIs with AMD GPU backend. Even when executing `torch.cuda.is_available()` on ROCm platform, it will return **`True`**.
 
-So far, I believe you must have seen enough duplicated works from AMD/Intel/NVIDIA on deep learning. Many of those share the same functionalities, designs and even third-party libraries. In the war for dl revenue, such situation may still last for a considerable period.
+So far, I believe you must have seen enough duplicated works from AMD/Intel/NVIDIA on deep learning. Many of those share the same functionalities, designs and even third-party libraries. In the war for dl revenue, such situation could still last for a considerable period.
 
 ## A better future
 
-The traditional wisdom tells us that 
+The traditional wisdom tells us that the unity follow separations. I do wish the deep learning frameworks finally can fit in a universal design:
+
+![universal](./oneapi/universal.svg)
+
+With a universal layer of ML IR, converting dl models between different frameworks becomes effortless.
+
+With a universal layer of processing, porting training program to AMD GPU with lower cost shall take zero change in scripts and no need to worry about the performance and compatibility when using models for inference.
+
+On such course, oneAPI still looks promising to me. But hurry! oneAPI! An open mind to the community benefits every party.
