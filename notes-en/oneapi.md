@@ -14,6 +14,8 @@ In the perspective of machines, the graph details the data, which we usually ide
 
 Of course, for better performance, the compiler mentioned above is also expected to automatically optimize the actual execution of kernels for specific devices. For example, the dl framework or its compiler need to figure out the best algorithm for a convolution operation, the hyper-parameters when executing the algorithm, such as the tile size, number of threads, size of L2, etc.
 
+![ai-chips](https://i0.wp.com/syncedreview.com/wp-content/uploads/2018/03/Capture3.png?w=1459&ssl=1)
+
 More recently, there is, or seems about to have, an explosion of AI chips, especially for model inference. For inference on cloud, GPUs from NVIDIA are definitely dominating while big-corp like AWS, Intel, Alibaba and Tecent are all pursuing to develop their own AI chips. In our pocket (cell phones), or above our heads (CCTVs), or in our living room (TV boxes and game consoles), the demands for on-device inference also accelerates companies like Apple, Qualcomm and Cambricon's effort to provide more performance with lower energy cost in their chips. Why am I talking this? Because when deploying a fine-tuned model to those devices, apart from the benefits from the chips, we also would like to have an optimized kernel execution on these chips, which is more difficult compared with Intel CPUs and NVIDIA GPUs. That is because these on-device chips are newer, with fewer user cases and lacking more engineers to come up with an equally comprehensive toolkit chain for developing, profiling and tuning.
 
 NVIDIA released A100 chip days before, which a 50% bump in price, though it claims a 20X improvement in DL training. But using AMD GPU still remains an promising alternatives to lower infrastructure cost. 
@@ -81,3 +83,5 @@ likewise, the full stack is now able to provide end-to-end acceleration for deep
 So far, I believe you must have seen enough duplicated works from AMD/Intel/NVIDIA on deep learning. Many of those share the same functionalities, designs and even third-party libraries. In the war for dl revenue, such situation may still last for a considerable period.
 
 ## A better future
+
+The traditional wisdom tells us that 
