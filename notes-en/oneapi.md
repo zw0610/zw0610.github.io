@@ -1,16 +1,16 @@
 # Hurry! oneAPI
 
-It has been a while since Intel announce its ambitious project: oneAPI, a set of libraries and toolkit that is expected to fill the gap between machine learning ops and optimized kernel execution on a wide diversity of devices.
+It has been a while since Intel announced its ambitious project: oneAPI, a set of libraries and toolkit that is expected to fill the gap between machine learning ops and optimized kernel execution on a wide diversity of devices.
 
 ## DL Framework
 
-Let's take a brief review of what a dl framework does:
+Let's take a brief review of what a deep learning (dl) framework does:
 
 ![dl_framework](./oneapi/dl_framework.svg)
 
-Like the graph indicates, algorithm researchers use dl APIs provided by frameworks to portrait what the graph looks like, dynamically or statically. Here we saved the words for what a *graph* is in deep learning models.
+Like the graph indicates, algorithm researchers use dl APIs provided by dl frameworks to portrait the graph, dynamically or statically. Here we save the words for what a *graph* is in dl models.
 
-In the perspective of machines, the graph details the data, which we usually identify as *tensors* in deep learning, and the operations processing data. To allocate data and execute the ops on specific devices, such like CPU, (AMD/NVIDIA/Intel) GPUs and other accelerators, a compiler is required to translate the ops into what . Given the facts that most deep learning engineers prefer the Python API from a framework, and dl frameworks prefer C++ as an efficient programming language to describe what the operation actually does, the ops are usually defined in a combined style of Python and C++, where the python works as a glue.
+In the perspective of machines, the dl model details the data, which we usually identify as *tensors* in deep learning, and the operations processing data. To allocate data and execute the ops on specific devices, such like CPU, GPUs and other accelerators, a compiler is required to translate ops into specific machine code. Given the facts that most dl engineers prefer Python API from a framework, and dl frameworks prefer C++ as an efficient programming language to describe what the operation actually does, the ops are usually defined in a combined style of Python and C++, where the python works as a glue.
 
 Of course, for better performance, the compiler mentioned above is also expected to automatically optimize the actual execution of kernels for specific devices. For example, the dl framework or its compiler need to figure out the best algorithm for a convolution operation, the hyper-parameters when executing the algorithm, such as the tile size, number of threads, size of L2, etc.
 
@@ -22,9 +22,9 @@ NVIDIA released A100 chip days before, which a 50% bump in price, though it clai
 
 ## Halide-lang
 
-It seems a mess in the deep learning optimization topic on various devices. Countless types of devices with drastic distinguished properties. Not to mention the deep learning models are also evolving.
+It seems a mess in the dl optimization topic on various devices. Countless types of devices with drastic distinguished properties. Not to mention the dl models are also evolving.
 
-This problem is not unique to deep learning. Image processing shares this problem. When using different filters in any camera apps, image processing is taking what the lens absorbs and applying complicated mathematical operations, often element-wisely. This pattern looks rather similar to what the deep learning does.
+This problem is not unique to dl. Image processing shares this problem. When using different filters in any camera apps, image processing is taking what the lens absorbs and applying complicated mathematical operations, often element-wisely. This pattern looks rather similar to what deep learning does.
 
 *[Halide](https://halide-lang.org/#gettingstarted) is a programming language designed to make it easier to write high-performance image and array processing code on modern machines.*
 
@@ -56,7 +56,7 @@ I do hope that [oneAPI](https://software.intel.com/content/www/us/en/develop/dow
 
 ![oneapi](./oneapi/oneapi.png)
 
-If we mask the graph above the deep learning:
+If we mask the graph above with deep learning:
 
 - the *optimized application* means *optimized* refers training programs and inference applications
 - *optimized middleware&framework* refers dl frameworks like Caffe, TensorFlow, PyTorch optimized by Intel or here we say oneAPI group
@@ -74,7 +74,7 @@ Lacking the support for AMD CPU and GPU seems most disappointing part in oneAPI.
 
 At this moment, AMD offers its own stack for deep learning, which is called [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm).
 
-likewise, the full stack is now able to provide end-to-end acceleration for deep learning training and inference, even on Kubernetes with its own [device plugin](https://github.com/RadeonOpenCompute/k8s-device-plugin).
+likewise, the full stack is now able to provide end-to-end acceleration for dl training and inference, even on Kubernetes with its own [device plugin](https://github.com/RadeonOpenCompute/k8s-device-plugin).
 
 ![rocm](https://www.amd.com/system/files/styles/992px/private/2019-11/343814-rocm-open-source-chart-1260x709.png?itok=l2Pz8mtQ)
 
@@ -84,7 +84,7 @@ So far, I believe you must have seen enough duplicated works from AMD/Intel/NVID
 
 ## A better future
 
-The traditional wisdom tells us that the unity follow separations. I do wish the deep learning frameworks finally can fit in a universal design:
+The traditional wisdom tells us that the unity follow separations. I do wish the dl frameworks finally can fit in a universal design:
 
 ![universal](./oneapi/universal.svg)
 
