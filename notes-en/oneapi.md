@@ -68,4 +68,16 @@ So far, there are two disappointments in oneAPI:
 
 ## ROCm from AMD
 
+Lacking the support for AMD CPU and GPU seems most disappointing part in oneAPI. It may seems naive, but I still hope the community work can break the fence of interest and help each others.
+
+At this moment, AMD offers its own stack for deep learning, which is called [ROCm](https://www.amd.com/en/graphics/servers-solutions-rocm).
+
+likewise, the full stack is now able to provide end-to-end acceleration for deep learning training and inference, even on Kubernetes with its own [device plugin](https://github.com/RadeonOpenCompute/k8s-device-plugin).
+
+![rocm](https://www.amd.com/system/files/styles/992px/private/2019-11/343814-rocm-open-source-chart-1260x709.png?itok=l2Pz8mtQ)
+
+> Interesting story, in the early stage of AMD-modified DL frameworks, AMD re-implemented most all CUDA runtime APIs with AMD GPU backend. Even when executing `torch.cuda.is_available()` on ROCm platform, it will return **`True`**.
+
+So far, I believe you must have seen enough duplicated works from AMD/Intel/NVIDIA on deep learning. Many of those share the same functionalities, designs and even third-party libraries. In the war for dl revenue, such situation may still last for a considerable period.
+
 ## A better future
