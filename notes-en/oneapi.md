@@ -50,7 +50,15 @@ From the source code of [TFRT](https://github.com/tensorflow/runtime), this new 
 
 ### oneAPI
 
-I do hope that oneAPI is not just re-branded mkl-dnn, mkl, mlsl.
+I do hope that oneAPI is not just re-branded mkl-dnn, mkl, mlsl and many other tools previously developed by Intel.
+
+![oneapi](./oneapi/oneapi.png)
+
+If we mask the diagram above the deep learning:
+
+- the *optimized application* means *optimized* refers training programs and inference applications
+- *optimized middleware&framework* refers 
+
 
 ## ROCm from AMD
 
