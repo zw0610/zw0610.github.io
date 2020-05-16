@@ -24,7 +24,7 @@ On the price side, NVIDIA released A100 chip days before, which a 50% bump in pr
 
 It seems a mess in the dl optimization topic on various devices. Countless types of devices with drastic distinguished properties. Not to mention the dl models are also evolving.
 
-This problem is not unique to dl. Image processing shares this problem. When using different filters in any camera apps, image processing is taking what the lens absorbs and applying complicated mathematical operations, often element-wisely. This pattern looks rather similar to what deep learning does.
+This problem is not unique to deep learning. Image processing shares this problem. When using different filters in any camera apps, image processing is taking what the lens absorb and applying complicated mathematical operations, often element-wisely. This pattern looks rather similar to what deep learning does.
 
 *[Halide](https://halide-lang.org/#gettingstarted) is a programming language designed to make it easier to write high-performance image and array processing code on modern machines.*
 
@@ -32,7 +32,7 @@ The most enlightening idea that Halide offers is that we can *[separate the algo
 
 ![halide_scheulde](./oneapi/halide-schedule.jpeg)
 
-This idea inspires [TVM](https://tvm.apache.org/) to come up with its own IR standard for machine learning. The origin purpose of TVM, if my recall is correct, is to use its ML IRs to represent dl models described in different frameworks and use its compiler to optimize executions on many devices. While the TVM seems no very successful (forgive me if I'm wrong) in the community and industry, I can't agree with its idea and goal more. (And the I think one of the reason is this topic is unfairly favors the device manufactories. TVM does not produce any AI chips. Its opt algorithm would easily be outperformed by tiny effort from Intel/NVIDIA.)
+This idea inspires [TVM](https://tvm.apache.org/) to come up with its own IR for machine learning. The origin purpose of TVM, if my recall is correct, is to use its ML IRs to represent dl models described in different frameworks and use its compiler to optimize executions on diverse devices. While the TVM seems not very successful (forgive me if I'm wrong) in the community and industry, I can't agree more with its idea and goal. (I think one of the reason is execution optimization is unfairly favors device manufactories. TVM does not produce any AI chips. Its scheduling algorithm would easily be out-performed by tiny effort from Intel/NVIDIA.)
 
 ## TFRT & openAPI
 
