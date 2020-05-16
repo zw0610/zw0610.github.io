@@ -10,15 +10,19 @@
 *After years of trial and error, I realized that in terms of the GPU application, whether compared to scientific computation or not, it is machine learning that always pushes the limit of GPU.*
 *Thus, I decided to devote myself to the machine learning engineering.*
 
+Email: [mailto](mailto:zw199006@gmail.com)
+
 ### 简历
 
 [中文简历](./resume/zhangwang.pdf)  [Resume](./resume/wangzhang.pdf)
 
 ### 技术博客
 
+#### GPU 相关
+
 [重峦叠重般的 GPU 利用率](./notes-cn/gpu-utilization-in-mist.md)
 
-[也说弹性分布式训练](./notes-cn/all-elasticity.md)
+#### GPU 共享
 
 [GPU 共享一：你真的需要吗？](./notes-cn/gpu-sharing-1.md)
 
@@ -28,8 +32,14 @@
 
 [GPU 共享四：MIG 带来的补充](./notes-cn/gpu-sharing-4.md)
 
-[各种 Optimizer 汇总](./notes-cn/various-optimizers.md)
+#### Deep Learning Engineering
+
+[也说弹性分布式训练](./notes-cn/all-elasticity.md)
 
 [EN: Hurry! oneAPI](./notes-en/oneapi.md)
+
+#### Deep Learning Algorithm
+
+[各种 Optimizer 汇总](./notes-cn/various-optimizers.md)
 
 ### 非技术博客
