@@ -34,7 +34,7 @@ The most enlightening idea that Halide offers is that we can *[separate the algo
 
 This idea inspires [TVM](https://tvm.apache.org/) to come up with its own IR for machine learning. The origin purpose of TVM, if my recall is correct, is to use its ML IRs to represent dl models described in different frameworks and use its compiler to optimize executions on diverse devices. While the TVM looks not very successful (forgive me if I'm wrong) in the community and industry, I can't agree more with its idea and goal. (I think one of the reason is execution optimization is unfairly favors device manufactories. TVM does not produce any AI chips. Its scheduling algorithm would easily be out-performed by tiny effort from Intel/NVIDIA.)
 
-## TFRT & openAPI
+## TFRT & oneAPI
 
 The TensorFlow Runtime and oneAPI initiated by Intel agree with the idea on a certain level.
 
