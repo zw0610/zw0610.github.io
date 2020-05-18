@@ -20,7 +20,7 @@ Email: [mailto](mailto:zw199006@gmail.com)
 
 #### GPU 相关
 
-[重峦叠重般的 GPU 利用率](./notes-cn/gpu-utilization-in-mist.md)
+[重峦叠嶂般的 GPU 利用率](./notes-cn/gpu-utilization-in-mist.md)
 
 #### GPU 共享
 
