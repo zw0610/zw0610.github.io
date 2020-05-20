@@ -43,3 +43,5 @@ Email: [mailto](mailto:zw199006@gmail.com)
 [各种 Optimizer 汇总](./notes-cn/various-optimizers.md)
 
 ### 非技术博客
+
+[Sybway 与我二三事](./notes-cn/oh-sybway.md)
