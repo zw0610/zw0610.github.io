@@ -74,17 +74,17 @@ Apple 也有一个类似于 cuDNN 的东西，叫 Metal Performance Shaders。Me
 | a_2_1 = vec_3 | a_2_2 = vec_4 | a_2_3 = vec_5 |
 | a_3_1 = vec_6 | a_3_2 = vec_7 | a_3_3 = vec_8 |
 
-1. 我们假设 input channel 是 1，output channel 也是 1。这样问题退化成对一个 7x7 的矩阵，用一个 7x7 的 kernel 做 correlation 得到的结果。最后得到的应该是一个长度为 1 的向量。
+- 我们假设 input channel 是 1，output channel 也是 1。这样问题退化成对一个 7x7 的矩阵，用一个 7x7 的 kernel 做 correlation 得到的结果。最后得到的应该是一个长度为 1 的向量。
 
 按照我们约定的张量转换成向量的方式，那么这个 7x7 的 kernel （张量）转换成矩阵其实就是先按照同样的方式把 kernel 张量转成一个向量，然后以这个向量为一个矩阵的第一列，把向量里的元素从上到下进行放置。（当然其实就是对这个向量做 transpose，得到是一个竖向量。）
 
-2. 我们假设 input channel 不是 1，而是大于 1 的 P。这时候首先我们再定义从张量转换到向量的规则：channel first，也就相当于现针对每个 channel 的 7x7 张量单独做转换，然后按照 channel 的顺序把 P 个子向量拼接成整体向量：
+- 我们假设 input channel 不是 1，而是大于 1 的 P。这时候首先我们再定义从张量转换到向量的规则：channel first，也就相当于现针对每个 channel 的 7x7 张量单独做转换，然后按照 channel 的顺序把 P 个子向量拼接成整体向量：
 
 ``` [a_1_1_channel1, ... , a_7_7_channel1, a_1_1_channel2, ... , a_7_7_channelP] ```
 
 这个时候，我们的 kernel 自然也变成了 Px7x7 的。其转换方法不需要改变，得到一个 49x1 的矩阵/竖向量。
 
-3. 我们假设 output channel 不是 1，而是大于 1 的 Q。那么最终结果应该是一个长度为 Q 的向量。
+- 我们假设 output channel 不是 1，而是大于 1 的 Q。那么最终结果应该是一个长度为 Q 的向量。
 
 kernel 张量的变化其实也很简单。对于 Q 中任一 channel，先按照 2 中的方法转成向量，然后根据其在 Q 中的顺序，以列的形式排列到矩阵中。也就是说在 output channel 中的第 i 个 Px7x7 张量，先变成一个长为 Px7x7 的向量，然后作为第 i 列拼入矩阵中。
 
