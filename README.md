@@ -38,6 +38,8 @@ Email: [mailto](mailto:zw199006@gmail.com)
 
 [EN: Hurry! oneAPI](./notes-en/oneapi.md)
 
+[在什么条件下，FC==Conv?](./notes-cn/fc-and-conv.md)
+
 #### Deep Learning Algorithm
 
 [各种 Optimizer 汇总](./notes-cn/various-optimizers.md)
