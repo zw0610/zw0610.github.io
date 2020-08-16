@@ -34,6 +34,10 @@ Email: [mailto](mailto:zw199006@gmail.com)
 
 #### Deep Learning Engineering
 
+[苹果偷偷搞了一个 MLCompute 库](./notes-cn/mlcompute.md)
+
+[分布式训练中对"用户友好"的一点点思考](./notes-cn/user-friendly-dt.md)
+
 [也说弹性分布式训练](./notes-cn/all-elasticity.md)
 
 [EN: Hurry! oneAPI](./notes-en/oneapi.md)
