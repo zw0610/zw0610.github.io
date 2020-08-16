@@ -1,3 +1,5 @@
+# 苹果偷偷搞了一个 MLCompute 库
+
 ## macOS 上跑训练？
 
 我们的算法工程师想必都知道，macOS 上跑 CUDA 来训练网络已经是很久之前的事情了。即便时候来苹果推出了自己的 GPU 通用计算库 [Metal](https://developer.apple.com/documentation/metal) 和 [Metal Performance Shader](https://developer.apple.com/documentation/metalperformanceshaders)（下文简称 MPS）之后，苹果在支持 GPU 机器学习上也非常的保守。Metal 可以类比成苹果的 OpenCL + OpenGL 或者 CUDA （Driver API），MPS 则有点 cuDNN 的感觉。依赖 Metal 和 MPS，确实也可以来做一些深度学习的推理和训练。然而其 API 的设计过于接近图像处理，对神经网络的构建反而不那么贴近。所以时至今日，我了解到的之后两个框架在使用 Metal：[PlaidML](https://github.com/plaidml/plaidml) 和 [Taichi](https://github.com/taichi-dev/taichi)。即使和 TensorFlow 合作推出了 [Swift-for-TensorFlow](https://www.tensorflow.org/swift)，似乎依然看不到 GPU 支持的影子。
