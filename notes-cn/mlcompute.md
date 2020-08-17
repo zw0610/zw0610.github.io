@@ -1,23 +1,21 @@
-# 苹果偷偷搞了一个 MLCompute 库
-
 ## macOS 上跑训练？
 
-我们的算法工程师想必都知道，macOS 上跑 CUDA 来训练网络已经是很久之前的事情了。即便时候来苹果推出了自己的 GPU 通用计算库 [Metal](https://developer.apple.com/documentation/metal) 和 [Metal Performance Shader](https://developer.apple.com/documentation/metalperformanceshaders)（下文简称 MPS）之后，苹果在支持 GPU 机器学习上也非常的保守。Metal 可以类比成苹果的 OpenCL + OpenGL 或者 CUDA （Driver API），MPS 则有点 cuDNN 的感觉。依赖 Metal 和 MPS，确实也可以来做一些深度学习的推理和训练。然而其 API 的设计过于接近图像处理，对神经网络的构建反而不那么贴近。所以时至今日，我了解到的之后两个框架在使用 Metal：[PlaidML](https://github.com/plaidml/plaidml) 和 [Taichi](https://github.com/taichi-dev/taichi)。即使和 TensorFlow 合作推出了 [Swift-for-TensorFlow](https://www.tensorflow.org/swift)，似乎依然看不到 GPU 支持的影子。
+我们的算法工程师想必都知道，macOS 上跑 CUDA 来训练网络已经是很久之前的事情了。即便时候来苹果推出了自己的 GPU 通用计算库 [Metal](https://developer.apple.com/documentation/metal) 和 [Metal Performance Shader](https://developer.apple.com/documentation/metalperformanceshaders)（下文简称 MPS）之后，苹果在支持 GPU 机器学习上也非常的保守。Metal 可以类比成苹果的 OpenCL + OpenGL 或者 CUDA （Driver API），MPS 则有点 cuDNN 的感觉。依赖 Metal 和 MPS，确实也可以来做一些深度学习的推理和训练。然而其 API 的设计过于接近图像处理，对神经网络的构建反而不那么贴近。所以时至今日，我了解到只有两个框架在使用 Metal：[PlaidML](https://github.com/plaidml/plaidml) 和 [Taichi](https://github.com/taichi-dev/taichi)。即便苹果和 TensorFlow 合作推出了 [Swift-for-TensorFlow](https://www.tensorflow.org/swift)，似乎依然看不到 GPU 支持的影子。
 
 
-或许是感觉到了这方面的问题，当我试用了 macOS big sur + Xcode 12 之后，突然发现苹果偷偷高了一个专门针对于机器学习的 framework，叫 [MLCompute](https://developer.apple.com/documentation/mlcompute/)。
+或许是感觉到了这方面的问题，当我试用了 macOS big sur + Xcode 12 之后，突然发现苹果偷偷搞了一个专门针对于机器学习的 framework，叫 [MLCompute](https://developer.apple.com/documentation/mlcompute/)。
 
 和其他的 framework 一样，MLCompute 提供两种 API：Swift 和 Objective-C。我在网上搜索相关例子的时候，发现了这篇调用 Swift API 的文章：https://towardsdatascience.com/use-apple-new-ml-compute-framework-to-accelerate-ml-training-and-inferencing-on-ios-and-macos-8b7b84f63031。对于了解 Swift 的同学可以直接看这篇文章，会讲得更详细。而考虑到许多算法同学更经常打交道的是 Python 和部分 C++，于是我根据上述文章中的 Playground 例子，改写了一个 Python 版本。
 
 **先上源码：https://github.com/zw0610/A3/tree/mlcompute/mlcompute_basic**
 
-- `mlcompute-test.mm` 是一个纯的 Objective-C++ 脚本，用来实现上面提到的 Playground 例子，也就是把三个 Tensor 相加，得到第四个 Tensor。
+- `mlcompute-test.mm` 是一个纯 Objective-C++ 脚本，用来实现上面提到的 Playground 例子，也就是把三个 Tensor 相加，得到第四个 Tensor。
 > [Objective-C++](https://en.wikipedia.org/wiki/Objective-C#Objective-C++) 应该算是一种编程语言的变种：它支持 Objective-C 和 C++ 的混合代码由 Clang 编译。
 - `mlcompute-bridge.mm` 是将 `mlcompute-test` 中的结构和功能抽出，并由 [pybind11](https://github.com/pybind/pybind11) 包装以便让各位同学在 Python 可以直接调用。
 - `test.py` 即为 Python 调用的脚本。
 - `compile_main.sh` 是将 `mlcompute-bridge.mm` 编译成动态链接库的脚本。
 
-在跳入具体的代码之前，我们现简单了解一下 MLCompute 重的一些大致概念。
+在跳入具体的代码之前，我们现简单了解一下 MLCompute 中的一些大致概念。
 
 ## MLCompute 的大致概念
 
@@ -39,7 +37,7 @@ MLCompute 中主要有两类数据类型：`MLCTensor` 和 `MLCTensorData`。前
 
 好了，废话不多说，我们直接看主要代码吧。这里的代码会涉及到 Objective-C++ 的一些用法，希望大家有点小准备：
 
-> 在 C++/Python 重的调用 member method：`class.member_method(param1=arg1, param2=arg2, ...)` 在 Objective-C++ 中会变成 `[class member_method_param1:arg1 param2:arg2]`
+> 在 C++/Python 中调用 member method：`class.member_method(param1=arg1, param2=arg2, ...)` 在 Objective-C++ 中会变成 `[class member_method_param1:arg1 param2:arg2]`
 
 对一些基础类的定义我们就直接放连接，不占篇幅了。大家有兴趣的话可以直接点开来看：
 
@@ -161,7 +159,6 @@ MLCTensor data5 : 1 2.1 3.2 4.3 5.4 6.5
 
 ## 结语
 
-如果有同学有兴趣一起利用下班时间为某个主流训练框架（TensorFlow 或 PyTorch）对接上 MLCompute 这个 backend 的话，我们可以聊一聊，看看可行性。
+如果有同学有兴趣一起为某个主流训练框架（TensorFlow 或 PyTorch）对接上 MLCompute 这个 backend 的话，我们可以聊一聊，看看可行性。
 
 欢迎随时骚扰。
-
